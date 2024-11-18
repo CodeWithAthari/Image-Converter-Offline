@@ -1,74 +1,99 @@
-# 🎮 AI Chat History Extension
+# 🚀 Offline Image Converter
 
-A browser extension that saves your chat history with AI assistants like ChatGPT, Claude, and more! Never lose your important conversations again.
+A lightning-fast, browser-based image converter that works completely offline! Convert between WebP, PNG, JPEG, and GIF formats instantly without uploading files to any server.
 
 ## ✨ Features
 
-- 💾 Automatically saves your chat history locally
-- 🔄 Works offline thanks to service workers
-- 🔍 Easy search through past conversations
-- 🎨 Clean and simple interface
-- ⚡ Lightweight and fast
-- 🔒 Privacy focused - all data stays on your device
+- 🔒 100% Offline & Secure - No server uploads
+- ⚡ Lightning-fast conversions
+- 📱 Works on mobile & desktop
+- 🎯 Batch conversion support
+- 💾 Automatic file size optimization
+- 🎨 Quality control
+- 📦 ZIP download for multiple files
+- 🔄 PWA support with offline caching
 
 ## 🛠️ How It Works
 
 ### Core Functions
 
-#### `saveChat()`
-📝 Saves the current chat conversation to browser storage when you send/receive messages
+- `handleFiles(files)` 📁
+  - Validates and processes uploaded files
+  - Filters files based on selected input format
+  - Updates the preview display
 
-#### `loadHistory()`
-📚 Loads and displays your saved chat history when you open the extension
+- `convertImage(file)` 🔄
+  - Converts images between formats
+  - Automatically optimizes size and quality
+  - Maintains aspect ratio while resizing
 
-#### `searchChats()`
-🔎 Filters through your saved chats based on keywords
+- `downloadZip(blob)` 📦
+  - Creates ZIP archives for batch downloads
+  - Automatically names files based on conversion type
 
-#### `clearHistory()`
-🗑️ Lets you delete your saved chat history if needed
+- `convertAndDownloadSingle(index)` ⬇️
+  - Handles single file conversions
+  - Creates downloadable links
 
-### Service Worker & Caching
+### Service Worker Features 🔧
 
-This extension uses service workers to:
-- 🔄 Work offline
-- ⚡ Load faster
-- 💾 Cache important files
+The project includes a service worker (`sw.js`) that enables:
+- Offline functionality
+- Fast loading through caching
+- PWA installation support
 
-To customize the caching behavior:
-1. Open `service-worker.js`
-2. Modify the `CACHE_NAME` and `urlsToCache` array
-3. Adjust cache duration in `maxAgeSeconds`
+#### Customizing the Service Worker
 
-To disable service worker:
-1. Delete or rename `service-worker.js`
-2. Remove the service worker registration from `manifest.json`
+1. **Cache Name**: Change the cache identifier in `sw.js`:
+```javascript
+const CACHE_NAME = 'your-cache-name-v1';
+```
 
-## 🎨 Customization
+2. **URLs to Cache**: Modify cached resources:
+```javascript
+const urlsToCache = [
+'/your-path/index.html',
+'/your-additional-resources'
+];
+```
+3. **Disable Service Worker**: Remove or comment out this code in `index.html`:
+```javascript
+if ('serviceWorker' in navigator) {
+window.addEventListener('load', () => {
+navigator.serviceWorker.register('sw.js')
+// ...
+});
+}
+```
 
-You can easily customize:
-- Theme colors in `styles.css`
-- Cache settings in `service-worker.js`
-- Supported chat platforms in `content.js`
+## 🚀 Getting Started
+
+1. Clone the repository
+2. Open `index.html` in your browser
+3. Start converting images!
+
+No build process or server required! 🎉
+
+## 🎯 Use Cases
+
+- 🖼️ Convert images for web optimization
+- 📱 Prepare images for mobile apps
+- 🗂️ Batch convert image collections
+- 💻 Create WebP images for modern browsers
 
 ## 📝 License
 
 This project is free to use under the MIT License. You can:
-- ✅ Use commercially
-- ✅ Modify
-- ✅ Distribute
-- ✅ Use privately
+- ✅ Use it commercially
+- ✅ Modify it
+- ✅ Distribute it
+- ✅ Use it privately
 
-Just remember to give credit! 😊
+Just remember to give credit! 🙏
 
-## 🔗 Links
+## 🔗 Connect & Support
 
-Created by [Dev Atrii](https://atrii.dev)
-- 📺 [YouTube Channel](https://youtube.com/YourChannel)
-- 🌟 Star this repo if you find it helpful!
+- 📺 [Subscribe to my YouTube Channel](https://www.youtube.com/@devatrii/videos)
+- ⭐ [Star this project on GitHub](https://github.com/CodeWithAthari/Image-Converter-Offline)
 
-## 💝 Support
-
-If you like this tool, consider:
-- Starring the repo
-- Sharing with friends
-- Subscribing to my YouTube channel
+Created with ❤️ by [Atrii](https://github.com/CodeWithAthari)
