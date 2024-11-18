@@ -1,0 +1,9 @@
+{
+  "name": "Image Converter",
+  "short_name": "ImgConvert",
+  "description": "Free online image converter",
+  "start_url": "/tools/image-converter",
+  "display": "standalone",
+  "background_color": "#f5f5f5",
+  "theme_color": "#2196f3"
+} 
