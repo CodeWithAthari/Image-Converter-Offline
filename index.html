@@ -29,7 +29,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Segoe UI', sans-serif;
             background: #f5f5f5;
@@ -270,6 +270,50 @@
         .converter-footer p {
             margin: 0.5rem 0;
         }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .github-btn {
+            background: #24292e;
+        }
+
+        .youtube-btn {
+            background: #ff0000;
+        }
+
+        .social-btn span {
+            font-size: 1.1rem;
+        }
+
+        .converter-footer .social-links {
+            margin-top: 2rem;
+        }
+
+        .converter-footer .social-btn {
+            font-size: 0.9rem;
+            padding: 0.6rem 1rem;
+        }
     </style>
 </head>
 <body>
@@ -336,6 +380,14 @@
         <footer class="converter-footer">
             <p>The fastest free offline image converter. Convert between WebP, PNG, JPEG, and GIF formats instantly in your browser.</p>
             <p>No file size limits • No watermarks • No data collection</p>
+            <div class="social-links">
+                <a href="https://github.com/CodeWithAthari/Image-Converter-Offline" target="_blank" class="social-btn github-btn">
+                    <span>⭐</span> Support on GitHub
+                </a>
+                <a href="https://www.youtube.com/@devatrii/videos" target="_blank" class="social-btn youtube-btn">
+                    <span>📺</span> Subscribe on YouTube
+                </a>
+            </div>
         </footer>
     </div>
 
